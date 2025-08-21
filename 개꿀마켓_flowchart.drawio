@@ -1,9 +1,96 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" version="28.1.0">
   <diagram name="페이지-1" id="XlRzEW4vM48X9FJ8-f3u">
-    <mxGraphModel dx="826" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="707" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-1" value="회원 가입" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390.0666666666666" y="190" as="sourcePoint" />
+            <mxPoint x="390" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-33" target="Ovdk0qwD0EW2E3yWYSIR-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="420" as="sourcePoint" />
+            <mxPoint x="530" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-13" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ovdk0qwD0EW2E3yWYSIR-7">
+          <mxGeometry x="-0.2286" y="-6" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-10" value="Y" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-33" target="Ovdk0qwD0EW2E3yWYSIR-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="460" as="sourcePoint" />
+            <mxPoint x="390" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-36" target="Ovdk0qwD0EW2E3yWYSIR-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="570" as="sourcePoint" />
+            <mxPoint x="390" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="390" as="sourcePoint" />
+            <mxPoint x="390" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="590" y="340" />
+              <mxPoint x="390" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-25" value="Y" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelPosition=left;verticalLabelPosition=middle;align=right;verticalAlign=middle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-34" target="Ovdk0qwD0EW2E3yWYSIR-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="330" as="sourcePoint" />
+            <mxPoint x="390" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-32" value="N" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelPosition=center;verticalLabelPosition=top;align=center;verticalAlign=bottom;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-34" target="Ovdk0qwD0EW2E3yWYSIR-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="289" as="sourcePoint" />
+            <mxPoint x="270" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-26" target="Ovdk0qwD0EW2E3yWYSIR-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-26" value="회원가입 시작" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="325" y="30" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-27" value="동네 설정" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="325" y="140" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-31" value="회원가입 실패" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="130" y="250" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-33" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;휴대폰 인증&lt;/span&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="325" y="370" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-34" value="최소 연령 확인" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="325" y="250" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-35" value="재인증" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="530" y="370" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-36" value="프로필 설정" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="325" y="490" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Ovdk0qwD0EW2E3yWYSIR-37" target="Ovdk0qwD0EW2E3yWYSIR-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-37" value="약관 동의" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="325" y="600" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ovdk0qwD0EW2E3yWYSIR-38" value="회원가입 완료" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="325" y="710" width="130" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
