@@ -91,12 +91,6 @@
         <mxCell id="Ovdk0qwD0EW2E3yWYSIR-38" value="회원가입 완료" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
           <mxGeometry x="325" y="710" width="130" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bRtsGgxU3_nVDHKU_ozi-1" value="" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
-          <mxGeometry x="550" y="100" width="230" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="bRtsGgxU3_nVDHKU_ozi-2" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="600" y="570" width="60" height="80" as="geometry" />
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
