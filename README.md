@@ -1,2 +1,2 @@
 # charly-market
-찰리 마켓 repo
+찰리 마켓 레포
