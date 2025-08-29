@@ -13,7 +13,7 @@ CREATE TABLE user (
 	id VARCHAR(20) NOT NULL COMMENT '회원 아이디',
 	user_password VARCHAR(999) NOT NULL COMMENT '회원 PASSWORD',
 	user_name VARCHAR(20) NOT NULL COMMENT '회원 이름',
-	user_phone INT NOT NULL COMMENT '회원 전화번호',
+	user_phone VARCHAR(15) NOT NULL COMMENT '회원 전화번호',
 	user_email VARCHAR(50) NOT NULL COMMENT '회원 이메일',
 	user_status CHAR(1) NOT NULL DEFAULT 'Y' COMMENT '활성, 비활성, 탈퇴(Y, B, N)',
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '계정 생성 시간',
