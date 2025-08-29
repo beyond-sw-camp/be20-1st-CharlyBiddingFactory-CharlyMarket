@@ -1,17 +1,23 @@
 # 📦 찰리마켓 - 경매 기반 중고거래 플랫폼
 
-<img width="300" height="300" alt="Image" src="https://github.com/user-attachments/assets/839f468f-12e6-4e46-992c-5717dbb602ab" />
+<img width="300" height="300" alt="484284e9-abf8-4cd0-8ca7-c6e0f343970c" src="https://github.com/user-attachments/assets/de6b956a-116b-4f4d-be98-f76219230f9d" />
 
 ---
 ##  👩‍👧‍👦 멤버
 
 | 김성태 | 김상재 | 이민욱 |
 |--------|--------|--------|
-| ![김성태](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/9e4db164-6542-487f-af85-841976967e12" />) | ![김상재](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/5d167b3c-d320-45db-bd7f-92a36e2ef81d" />) | ![이민욱](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/9a1cec8e-ed4e-4431-a6a9-d53bcaaea1e2" />) |
+| ![김성태](<img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/5c6e1ae2-6141-421f-9a1e-167fd0fca240" />
+) | ![김상재](<img width="100" height="100" alt="image 1" src="https://github.com/user-attachments/assets/148449e9-d047-4bfb-bba8-b22127f2f13a" />
+ ) | ![이민욱](<img width="100" height="100" alt="image 2" src="https://github.com/user-attachments/assets/bb3f3d72-699b-4353-950b-bf6b1ee05d04" />
+) |
 
 | 박연수 | 박인수 | 유한세 |
 |--------|--------|--------|
-| ![박연수](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/e9998d6d-7536-4323-84f5-95095c30326a" />) | ![박인수](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/bf2fe1a8-bc49-42d8-8749-18bb967b903d" />) | ![유한세](<img width="480" height="480" alt="Image" src="https://github.com/user-attachments/assets/cf0596c9-4527-40e6-8b1e-a012b159a688" />) |
+| ![박연수](<img width="100" height="100" alt="image 3" src="https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2" />
+) | ![박인수](<img width="100" height="100" alt="image 4" src="https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f" />
+) | ![유한세](<img width="100" height="100" alt="image 5" src="https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c" />
+) |
 
 ---
 ##  ⚒️서비스 소개
