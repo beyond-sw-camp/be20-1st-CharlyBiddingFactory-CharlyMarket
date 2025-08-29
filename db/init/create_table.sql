@@ -41,7 +41,7 @@ CREATE TABLE notice (
 );
 
 
-CREATE TABLE user_history (
+CREATE TABLE user_log (
 	user_log_id INT NOT NULL AUTO_INCREMENT COMMENT '로그 ID',
 	user_id INT NOT NULL COMMENT '회원id',
 	user_log_content VARCHAR(999) NULL COMMENT '상세내용(전, 후)',
@@ -55,7 +55,7 @@ CREATE TABLE user_history (
 CREATE TABLE account (
 	account_id INT NOT NULL AUTO_INCREMENT ,
 	bank_name VARCHAR(10) NOT NULL COMMENT '은행명',
-	account_no INT NOT NULL COMMENT '계좌번호',
+	account_no VARCHAR(20) NOT NULL COMMENT '계좌번호',
 	bank_owner VARCHAR(20) NOT NULL COMMENT '예금주명',
 	user_id INT NOT NULL COMMENT '회원코드',
 	main_status CHAR(1) NULL COMMENT '대표계좌 (Y)',
@@ -133,8 +133,8 @@ CREATE TABLE auction_item (
 
 CREATE TABLE alarm_template (
 	alarm_id INT NOT NULL AUTO_INCREMENT COMMENT 'auto increment',
-	alarm_temp VARCHAR(999) NULL COMMENT '알림 내용 틀',
-	alarm_temp_status CHAR(1) NULL DEFAULT 'Y' COMMENT '알림 틀을 사용할지 말지',
+	alarm_content VARCHAR(999) NULL COMMENT '알림 내용 틀',
+	alarm_status CHAR(1) NULL DEFAULT 'Y' COMMENT '알림 틀을 사용할지 말지',
 	category_id INT NOT NULL COMMENT '어떤 카테고리의 알림인지',
 	PRIMARY KEY(alarm_id),
 	FOREIGN KEY(category_id) REFERENCES category(category_id)
@@ -212,7 +212,7 @@ CREATE TABLE auction_bid (
 
 CREATE TABLE point_log (
 	point_log_id INT NOT NULL AUTO_INCREMENT,
-	trade_type CHAR(1) NOT NULL COMMENT '포인트 사용/반환/이전',
+	trade_type CHAR(1) NOT NULL COMMENT '포인트 사용/반환/이전 (U, R, T)',
 	trade_amount INT NOT NULL COMMENT '거래한 포인트 금액',
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '거래한 일시',
 	trade_explanation VARCHAR(999) NULL COMMENT '충전, 환불, 보관, 이전에 대한 세부 내용',
@@ -245,12 +245,12 @@ CREATE TABLE review (
 CREATE TABLE file (
 	file_id INT NOT NULL AUTO_INCREMENT,
 	auction_id INT NOT NULL COMMENT '경매 물품코드',
-	file_address VARCHAR(999) NULL COMMENT '파일 경로',
+	file_path VARCHAR(999) NULL COMMENT '파일 경로',
 	file_name VARCHAR(255) NULL COMMENT '파일 이름',
 	file_type VARCHAR(10) NULL COMMENT '확장자 종류 (JPG,PNG,PDF등)',
-	review_id INT NOT NULL COMMENT '후기',
-	inquiry_id INT NOT NULL COMMENT '문의',
-	notice_id INT NOT NULL COMMENT '공지사항',
+	review_id INT NULL COMMENT '후기',
+	inquiry_id INT NULL COMMENT '문의',
+	notice_id INT NULL COMMENT '공지사항',
 	PRIMARY KEY(file_id),
 	FOREIGN KEY(review_id) REFERENCES review(review_id),
 	FOREIGN KEY(inquiry_id) REFERENCES inquiry(inquiry_id),
