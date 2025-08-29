@@ -8,11 +8,12 @@
 
 | 김성태 | 김상재 | 이민욱 |
 |--------|--------|--------|
-| ![김성태](https://github.com/user-attachments/assets/5c6e1ae2-6141-421f-9a1e-167fd0fca240) <br> 김성태 | ![김상재](https://github.com/user-attachments/assets/148449e9-d047-4bfb-bba8-b22127f2f13a) <br> 김상재 | ![이민욱](https://github.com/user-attachments/assets/bb3f3d72-699b-4353-950b-bf6b1ee05d04) <br> 이민욱 |
+| <img src="https://github.com/user-attachments/assets/5c6e1ae2-6141-421f-9a1e-167fd0fca240" alt="김성태" width="100" height="100"> <br> 김성태 | <img src="https://github.com/user-attachments/assets/148449e9-d047-4bfb-bba8-b22127f2f13a" alt="김상재" width="100" height="100"> <br> 김상재 | <img src="https://github.com/user-attachments/assets/bb3f3d72-699b-4353-950b-bf6b1ee05d04" alt="이민욱" width="100" height="100"> <br> 이민욱 |
 
 | 박연수 | 박인수 | 유한세 |
 |--------|--------|--------|
-| ![박연수](https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2) <br> 박연수 | ![박인수](https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f) <br> 박인수 | ![유한세](https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c) <br> 유한세 |
+| <img src="https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2" alt="박연수" width="100" height="100"> <br> 박연수 | <img src="https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f" alt="박인수" width="100" height="100"> <br> 박인수 | <img src="https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c" alt="유한세" width="100" height="100"> <br> 유한세 |
+
 
 ---
 
