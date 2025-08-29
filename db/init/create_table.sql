@@ -119,11 +119,12 @@ CREATE TABLE auction_item (
 	starting_price INT NOT NULL COMMENT '판매자가 지정한 최소 입찰 가격',
 	current_price INT NULL COMMENT '현재까지 나온 최고 입찰 가격',
 	bid_unit INT NOT NULL COMMENT '최소 100원 단위 이상 입찰 가능',
-	bid_status CHAR(1) NULL COMMENT '입찰/낙찰 여부 낙찰시(Y)',
+	bid_status CHAR(1) NULL COMMENT '입찰/낙찰/수령확인/유찰 (B, F, Y, N)',
 	auction_start_time TIMESTAMP NULL COMMENT '경매 시작 시간(물품등록 30분 후)',
 	auction_end_time TIMESTAMP NULL COMMENT '경매 종료 시간(10분씩 연장)',
 	seller_address VARCHAR(99) NOT NULL COMMENT '판매자의 시/군/구 주소',
 	category_id INT NOT NULL COMMENT '물품 카테고리',
+	posting_status CHAR(1) NOT NULL COMMENT '게시상태 (Y : 게시, N : 비활성화)',
 	PRIMARY KEY (auction_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
 	FOREIGN KEY(category_id) REFERENCES category(category_id)
@@ -158,14 +159,14 @@ CREATE TABLE alarm_box (
 
 CREATE TABLE report (
 	report_id INT NOT NULL AUTO_INCREMENT COMMENT 'auto increment',
-	report_at TIMESTAMP NOT NULL COMMENT '신고한 날짜',
+	report_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '신고한 날짜',
 	report_content VARCHAR(999) NOT NULL COMMENT '신고한 내용',
-	report_status CHAR(1) NOT NULL COMMENT '신고 조치 완료 시(Y)',
+	report_status CHAR(1) NOT NULL DEFAULT 'N' COMMENT '신고 조치 완료 시(Y)',
 	report_action VARCHAR(999) NULL COMMENT '신고 조치한 내용',
 	category_id INT NOT NULL COMMENT '어떤 유형의 신고인지',
 	auction_id INT NOT NULL COMMENT '신고할 물품 코드', -- category fk
 	reporter_id INT NOT NULL COMMENT '신고를 하는 사람', -- user fk
-	handler_id INT NOT NULL COMMENT '신고를 처리하는 사람', -- user fk
+	handler_id INT NULL COMMENT '신고를 처리하는 사람', -- user fk
 	PRIMARY KEY (report_id),
 	FOREIGN KEY(category_id) REFERENCES category(category_id),
 	FOREIGN KEY(auction_id) REFERENCES auction_item(auction_id),
@@ -244,17 +245,20 @@ CREATE TABLE review (
 
 CREATE TABLE file (
 	file_id INT NOT NULL AUTO_INCREMENT,
-	auction_id INT NOT NULL COMMENT '경매 물품코드',
+	auction_id INT NULL COMMENT '경매 물품코드',
 	file_path VARCHAR(999) NULL COMMENT '파일 경로',
 	file_name VARCHAR(255) NULL COMMENT '파일 이름',
 	file_type VARCHAR(10) NULL COMMENT '확장자 종류 (JPG,PNG,PDF등)',
 	review_id INT NULL COMMENT '후기',
 	inquiry_id INT NULL COMMENT '문의',
 	notice_id INT NULL COMMENT '공지사항',
+	user_id INT NULL COMMENT '유저',
 	PRIMARY KEY(file_id),
 	FOREIGN KEY(review_id) REFERENCES review(review_id),
 	FOREIGN KEY(inquiry_id) REFERENCES inquiry(inquiry_id),
-	FOREIGN KEY(notice_id) REFERENCES notice(notice_id)
+	FOREIGN KEY(notice_id) REFERENCES notice(notice_id),
+	FOREIGN KEY(user_id) REFERENCES user(user_id),
+	FOREIGN KEY(auction_id) REFERENCES auction_item(auction_id)
 );
 
 
