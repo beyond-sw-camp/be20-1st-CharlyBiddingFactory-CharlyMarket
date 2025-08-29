@@ -7,17 +7,16 @@
 
 | 김성태 | 김상재 | 이민욱 |
 |--------|--------|--------|
-| ![김성태](<img width="480" height="480" alt="image" src="https://github.com/user-attachments/assets/5c6e1ae2-6141-421f-9a1e-167fd0fca240" />
-) | ![김상재](<img width="480" height="480" alt="image 1" src="https://github.com/user-attachments/assets/148449e9-d047-4bfb-bba8-b22127f2f13a" />
- ) | ![이민욱](<img width="480" height="480" alt="image 2" src="https://github.com/user-attachments/assets/bb3f3d72-699b-4353-950b-bf6b1ee05d04" />
+| ![김성태](<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/5c6e1ae2-6141-421f-9a1e-167fd0fca240" />
+) | ![김상재](<img width="200" height="200" alt="image 1" src="https://github.com/user-attachments/assets/148449e9-d047-4bfb-bba8-b22127f2f13a" />
+ ) | ![이민욱](<img width="200" height="200" alt="image 2" src="https://github.com/user-attachments/assets/bb3f3d72-699b-4353-950b-bf6b1ee05d04" />
 ) |
 
 | 박연수 | 박인수 | 유한세 |
 |--------|--------|--------|
-| ![박연수](
-<img width="480" height="480" alt="image 3" src="https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2" />
-) | ![박인수](<img width="480" height="480" alt="image 4" src="https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f" />
-) | ![유한세](<img width="480" height="480" alt="image 5" src="https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c" />
+| ![박연수](<img width="200" height="200" alt="image 3" src="https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2" />
+) | ![박인수](<img width="200" height="200" alt="image 4" src="https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f" />
+) | ![유한세](<img width="200" height="200" alt="image 5" src="https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c" />
 ) |
 
 ---
