@@ -1,6 +1,6 @@
 # 📦 찰리마켓 - 경매 기반 중고거래 플랫폼
 
-![찰리마켓](https://github.com/user-attachments/assets/de6b956a-116b-4f4d-be98-f76219230f9d)
+<img src="https://github.com/user-attachments/assets/de6b956a-116b-4f4d-be98-f76219230f9d" alt="찰리마켓" width="300">
 
 ---
 
