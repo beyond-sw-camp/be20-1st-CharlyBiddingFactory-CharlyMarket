@@ -91,3 +91,8 @@
 ---
 
 ✨ **찰리마켓, 중고거래의 새로운 기준!**
+
+---
+# 📥요구사항 명세서
+<img width="1264" height="1096" alt="스크린샷 2025-08-29 151940" src="https://github.com/user-attachments/assets/2ecb999e-9f53-43c8-b2a6-4c37faf5deec" />
+
