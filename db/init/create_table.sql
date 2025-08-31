@@ -1,5 +1,5 @@
 CREATE TABLE grade (
-	grade_id INT NOT NULL AUTO_INCREMENT COMMENT '회원코드',
+	grade_id INT NOT NULL AUTO_INCREMENT COMMENT '등급코드',
 	grade_name VARCHAR(5) NOT NULL COMMENT '회원별 등급(B,S,G,P)',
 	grade_fee_rate DECIMAL(10,2) NOT NULL COMMENT '등급별 수수료율(10, 7, 5, 3)',
 	grade_standard INT NULL COMMENT 'S (20), G (50), P (100)',
@@ -18,10 +18,11 @@ CREATE TABLE user (
 	user_status CHAR(1) NOT NULL DEFAULT 'Y' COMMENT '활성, 비활성, 탈퇴(Y, B, N)',
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '계정 생성 시간',
 	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '계정정보 수정시간',
-	grade_id INT NOT NULL COMMENT '계정 등급코드',
+	grade_id INT NULL COMMENT '계정 등급코드',
 	user_balance INT NOT NULL DEFAULT 0 COMMENT '계정잔고',
 	trade_count INT NOT NULL DEFAULT 0 COMMENT '회원별로 거래를 몇번했는지 책정',
 	user_nickname VARCHAR(20) NOT NULL COMMENT '회원 닉네임',
+	stored_point INT NOT NULL DEFAULT 0 COMMENT '입찰중인 포인트',
 	PRIMARY KEY(user_id),
  	FOREIGN KEY(grade_id) REFERENCES grade(grade_id)
 );
@@ -58,7 +59,6 @@ CREATE TABLE account (
 	account_no VARCHAR(20) NOT NULL COMMENT '계좌번호',
 	bank_owner VARCHAR(20) NOT NULL COMMENT '예금주명',
 	user_id INT NOT NULL COMMENT '회원코드',
-	main_status CHAR(1) NULL COMMENT '대표계좌 (Y)',
 	PRIMARY KEY(account_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id)
 );
@@ -91,7 +91,7 @@ CREATE TABLE inquiry (
 	finished_at TIMESTAMP NULL COMMENT '문의 처리 완료 시간',
 	inquiry_answer VARCHAR(999) NULL COMMENT '답변 내용',
 	user_id INT NOT NULL COMMENT '작성자 회원코드',
-	admin_id INT NOT NULL COMMENT '문의 답변 작성자',
+	admin_id INT NULL COMMENT '문의 답변 작성자',
 	PRIMARY KEY(inquiry_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
 	FOREIGN KEY(admin_id) REFERENCES user(user_id)
@@ -117,14 +117,14 @@ CREATE TABLE auction_item (
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '경매 물품을 등록한 시간',
 	updated_at TIMESTAMP NULL COMMENT '경매 물품에 대한 정보를 수정한 시간',
 	starting_price INT NOT NULL COMMENT '판매자가 지정한 최소 입찰 가격',
-	current_price INT NULL COMMENT '현재까지 나온 최고 입찰 가격',
+	current_price INT DEFAULT 0 COMMENT '현재까지 나온 최고 입찰 가격',
 	bid_unit INT NOT NULL COMMENT '최소 100원 단위 이상 입찰 가능',
 	bid_status CHAR(1) NULL COMMENT '입찰/낙찰/수령확인/유찰 (B, F, Y, N)',
 	auction_start_time TIMESTAMP NULL COMMENT '경매 시작 시간(물품등록 30분 후)',
 	auction_end_time TIMESTAMP NULL COMMENT '경매 종료 시간(10분씩 연장)',
 	seller_address VARCHAR(99) NOT NULL COMMENT '판매자의 시/군/구 주소',
 	category_id INT NOT NULL COMMENT '물품 카테고리',
-	posting_status CHAR(1) NOT NULL COMMENT '게시상태 (Y : 게시, N : 비활성화)',
+	posting_status CHAR(1) NOT NULL DEFAULT 'Y' COMMENT '게시상태 (Y : 게시, N : 비활성화)',
 	PRIMARY KEY (auction_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
 	FOREIGN KEY(category_id) REFERENCES category(category_id)
@@ -149,6 +149,7 @@ CREATE TABLE alarm_box (
 	user_id INT NOT NULL COMMENT '알림을 받는 회원',
 	alarm_id INT NOT NULL COMMENT '알림 유형',
 	auction_id INT NOT NULL COMMENT '물품 id',
+	alarm_content VARCHAR(999) COMMENT '알림내용',
 	PRIMARY KEY(alarm_box_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
 	FOREIGN KEY(alarm_id) REFERENCES alarm_template(alarm_id),
@@ -179,18 +180,18 @@ CREATE TABLE report (
 
 CREATE TABLE delivery (
 	delivery_id INT NOT NULL AUTO_INCREMENT,
-	delivery_address VARCHAR(100) NOT NULL COMMENT '낙찰자가 입력',
-	delivery_no INT NOT NULL COMMENT '판매자가 등록한 운송장번호',
-	delivery_status CHAR(1) NOT NULL COMMENT '베송보냄/반송/배송완료 확인',
-	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '운송장번호를 입력한시간',
-	finished_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT '배송을 수령한 시간',
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '배송생성시간', 
+	delivery_address VARCHAR(100) NULL COMMENT '낙찰자가 입력',
+	registered_at TIMESTAMP NULL COMMENT '수령지 입력 시간',
+	delivery_no VARCHAR(20) NULL COMMENT '판매자가 등록한 운송장번호',
+	finished_at TIMESTAMP NULL  COMMENT '배송을 수령한 시간',
+	delivery_status CHAR(1) NULL COMMENT '생성null/배송지입력E/배송보냄I/배송완료 확인S/반송R',
 	send_user_id INT NOT NULL COMMENT '판매자',
-	reciver_user_id INT NOT NULL COMMENT '낙찰자',
+	receiver_user_id INT NOT NULL COMMENT '낙찰자',
 	auction_id INT NOT NULL COMMENT '경매 물품',
-	registered_at TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성된 시간(수령지 입력 시간)',
 	PRIMARY KEY(delivery_id),
 	FOREIGN KEY(send_user_id) REFERENCES user(user_id),
-	FOREIGN KEY(reciver_user_id) REFERENCES user(user_id),
+	FOREIGN KEY(receiver_user_id) REFERENCES user(user_id),
 	FOREIGN KEY(auction_id) REFERENCES auction_item(auction_id)
 );
 
@@ -269,5 +270,3 @@ CREATE TABLE favorite (
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
 	FOREIGN KEY(auction_id) REFERENCES auction_item(auction_id)
 );
-
-
