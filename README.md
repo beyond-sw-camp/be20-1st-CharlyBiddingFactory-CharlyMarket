@@ -110,17 +110,17 @@
 
 ## 🚀 3. 기술 스택
 
- 🚀  Stacks
+ 🚀  Stacks   
 <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/>
 <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
 
-⚒️  Tools
+ ⚒️  Tools    
 <img src="https://img.shields.io/badge/HeidiSQL-b0fb0c?style=for-the-badge&logoColor=white"/>
 <img src="https://img.shields.io/badge/ERDCLOUDE-72099f?style=for-the-badge&logoColor=white"/>
 <img src="https://img.shields.io/badge/canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white"/>
 <img src="https://img.shields.io/badge/dbeaver-382923?style=for-the-badge&logo=dbeaver&logoColor=white"/>
 
-👥  Collaboration
+👥  Collaboration      
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
 <img src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>
@@ -135,6 +135,7 @@
 - ### 요구사항 명세서
 
   요구사항 명세서를 자세히 보려면 [여기](https://docs.google.com/spreadsheets/d/1gjJ8mYfv-hq05CkPhD09bkD4a0_2K8PejZSjfwREuMI/edit?gid=1507918672#gid=1507918672)를 클릭하세요
+
 <img width="1410" height="1266" alt="요구사항 명세서" src="https://github.com/user-attachments/assets/83397f68-132d-46d7-b6ce-07f915a21156" />
 
 - ### UML(**Unified Modeling Language)**
