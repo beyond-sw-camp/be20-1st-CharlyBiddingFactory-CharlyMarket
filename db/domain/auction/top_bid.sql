@@ -18,6 +18,8 @@ BEGIN
     DECLARE v_prev_bid  INT;   
     DECLARE v_prev_bid_id INT;
     DECLARE v_cnt         INT;
+	DECLARE v_new_balance INT;
+	DECLARE v_balance     INT;
 
     /* 에러 시 롤백하고 원본 에러 재던지기 */
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
@@ -99,6 +101,11 @@ BEGIN
                    stored_point = COALESCE(stored_point,0) - COALESCE(v_prev_bid,0)
              WHERE user_id = v_prev_uid;
 
+            SELECT user_balance
+              INTO v_balance
+              FROM `user`
+             WHERE user_id = v_prev_uid;
+            
             /* 포인트 이력 (반환/보관해제) */
             INSERT INTO point_log (
                 trade_type, trade_amount, trade_explanation,
@@ -109,7 +116,7 @@ BEGIN
                 '상위 입찰에 의한 포인트 반환',
                 v_prev_bid_id,
                 v_prev_uid,
-                v_prev_bid
+                v_balance
             );
         END IF;
 
@@ -119,6 +126,11 @@ BEGIN
                stored_point = COALESCE(stored_point,0) + p_bid_amount
          WHERE user_id = p_user_id;
 
+        SELECT user_balance
+          INTO v_new_balance
+          FROM `user`
+         WHERE user_id = p_user_id;
+                
         /* 포인트 이력 (보관) */
         INSERT INTO point_log (
             trade_type, trade_amount, trade_explanation,
@@ -129,7 +141,7 @@ BEGIN
             '상위 입찰 포인트 보관',
             v_bid_id,
             p_user_id,
-            p_bid_amount
+            v_new_balance
         );
     END IF;
 
