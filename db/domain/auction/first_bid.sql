@@ -14,6 +14,7 @@ BEGIN
     DECLARE v_price INT;
     DECLARE v_bid_id INT;
     DECLARE v_point  INT;
+	DECLARE v_balance INT;
 
     /* 에러 시 롤백하고 원본 에러 재던지기 */
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
@@ -67,6 +68,11 @@ BEGIN
  	        stored_point = COALESCE(stored_point, 0) + p_bid_amount
 	  WHERE user_id = p_user_id;
 
+    SELECT user_balance 
+      INTO v_balance
+      FROM `user`
+     WHERE user_id = p_user_id;
+
     /* 5) 포인트 이력 (타임스탬프는 DEFAULT CURRENT_TIMESTAMP 가정) */
     INSERT INTO point_log (
         trade_type, trade_amount, trade_explanation,
@@ -77,7 +83,7 @@ BEGIN
         '입찰 포인트 보관',
         v_bid_id,
         p_user_id,
-        p_bid_amount
+        v_balance
     );
 
     /* 6) 경매 상태/현재가 갱신 (최초 입찰) */
