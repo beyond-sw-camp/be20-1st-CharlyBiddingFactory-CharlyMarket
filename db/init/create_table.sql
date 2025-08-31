@@ -22,7 +22,7 @@ CREATE TABLE user (
 	user_balance INT NOT NULL DEFAULT 0 COMMENT '계정잔고',
 	trade_count INT NOT NULL DEFAULT 0 COMMENT '회원별로 거래를 몇번했는지 책정',
 	user_nickname VARCHAR(20) NOT NULL COMMENT '회원 닉네임',
-	stored_point INT NOT NULL DEFAULT 0 COMMENT '입찰중인 포인트'
+	stored_point INT NOT NULL DEFAULT 0 COMMENT '입찰중인 포인트',
 	PRIMARY KEY(user_id),
  	FOREIGN KEY(grade_id) REFERENCES grade(grade_id)
 );
@@ -191,7 +191,7 @@ CREATE TABLE delivery (
 	auction_id INT NOT NULL COMMENT '경매 물품',
 	PRIMARY KEY(delivery_id),
 	FOREIGN KEY(send_user_id) REFERENCES user(user_id),
-	FOREIGN KEY(reciver_user_id) REFERENCES user(user_id),
+	FOREIGN KEY(receiver_user_id) REFERENCES user(user_id),
 	FOREIGN KEY(auction_id) REFERENCES auction_item(auction_id)
 );
 
