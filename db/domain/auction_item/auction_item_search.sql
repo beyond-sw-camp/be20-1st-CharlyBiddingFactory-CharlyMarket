@@ -28,35 +28,6 @@ DELIMITER ;
 CALL category_item_search(2);
 
 -- 키워드 검색 시 해당 키워드 목록 조회
-SELECT * FROM auction_item;
-
-INSERT INTO auction_item(user_id, auction_title, auction_content, created_at, starting_price, current_price, bid_unit, seller_address, category_id, posting_status)
-VALUES(
-	1,
-	"아이폰 15",
-	"거의 새상품 팝니다",
-	NOW(),
-	800000,
-	850000,
-	1000,
-	"서울 강남구",
-	1,
-	"Y"
-);
-
-INSERT INTO auction_item(user_id, auction_title, auction_content, created_at, starting_price, current_price, bid_unit, seller_address, category_id, posting_status)
-VALUES(
-	1,
-	"아이폰 16",
-	"거의 새상품 팝니다",
-	NOW(),
-	800000,
-	850000,
-	1000,
-	"서울 강남구",
-	1,
-	"Y"
-);
 
 DELIMITER //
 CREATE PROCEDURE search_by_keyword(
@@ -78,3 +49,26 @@ END //
 DELIMITER ;
 
 CALL search_by_keyword("아이폰");
+
+-- 즐겨찾기 필터 시 해당 유저 즐겨찾기 목록 조회
+DELIMITER //
+
+CREATE PROCEDURE favorite_item(
+	IN p_user_id INT
+)
+BEGIN
+	select
+		u.user_id AS "유저아이디",
+		f.auction_id,
+		a.auction_title AS "물품명",
+		a.auction_content,
+		a.starting_price,
+		a.created_at
+	FROM favorite f
+	JOIN user u ON f.user_id = u.user_id
+	JOIN auction_item a ON f.auction_id = a.auction_id
+	WHERE p_user_id = u.user_id
+	ORDER BY u.user_id, f.auction_id
+	LIMIT 10;
+END //
+DELIMITER ;
