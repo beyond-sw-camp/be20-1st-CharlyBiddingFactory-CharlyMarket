@@ -218,7 +218,7 @@ CREATE TABLE point_log (
 	trade_amount INT NOT NULL COMMENT '거래한 포인트 금액',
 	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '거래한 일시',
 	trade_explanation VARCHAR(999) NULL COMMENT '충전, 환불, 보관, 이전에 대한 세부 내용',
-	bid_id INT NOT NULL COMMENT '입찰한 내용',
+	bid_id INT NULL COMMENT '입찰한 내용', -- 여기가 수정됐습니다
 	user_id INT NOT NULL COMMENT '포인트 거래가 발생하는 회원',
 	point_amount INT NOT NULL COMMENT '현재 포인트',
 	PRIMARY KEY(point_log_id),
