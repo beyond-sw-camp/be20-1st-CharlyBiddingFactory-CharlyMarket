@@ -21,11 +21,15 @@ proc: BEGIN
 
     START TRANSACTION;
 
-    /* 1) 대상 경매 선점(동시성 방지): 마감 경매 선택 후 잠금 */
+    /* 1) 대상 경매 선점: 마감 경매 선택 후 잠금 */
     UPDATE auction_item
-       SET bid_status = 'F'
+       SET bid_status = 'F',
+           updated_at = NOW()
      WHERE auction_id = p_auction_id
-       AND bid_status = 'B' OR bid_status IS NULL
+       AND (
+			       bid_status = 'B'
+			    OR bid_status IS NULL
+			)
        AND auction_end_time <= v_now;
 
     /* 2) 잠금 후 상태 재확인 */
@@ -73,4 +77,4 @@ END;
 //
 DELIMITER ;
 
-CALL sp_close_one_auction(4);
+CALL sp_close_one_auction(1);
