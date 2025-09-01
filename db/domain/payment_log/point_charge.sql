@@ -48,11 +48,14 @@ BEGIN
     -- 결제 로그 기록
     INSERT INTO payment_log (payment_type, account_id, user_id, payment_amount, conversion_amount, grade_name, point_amount)
     VALUES ('C', p_account_id, p_user_id, p_payment_amount, v_conversion_amount, v_grade_name, v_point_amount);
+    
+    -- 포인트 로그 기록
+    INSERT INTO point_log (trade_type, trade_amount, created_at, trade_explanation, user_id, point_amount)
+    VALUES ('I', p_payment_amount, NOW(), "충전했습니다", p_user_id, v_conversion_amount);
 
 END //
 
 DELIMITER ;
-
 
 -- bronze
 CALL charge_point2(1, 1, 100000);
