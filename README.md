@@ -130,12 +130,11 @@
 
 ## 🗂️ 4. 프로젝트 산출물
 
-- ### WBS (Work Breakdown Structure)
+- ### WBS **(Work Breakdown Structure)**
   WBS를 자세히 보려면 [여기](https://www.notion.so/25b36d2af8f580fab019e6d2211cd7a5?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)를 클릭하세요요
    <details>
   <summary>WBS 보기</summary>
-     
-   <img width="2548" height="1333" alt="스크린샷 2025-09-02 172357" src="https://github.com/user-attachments/assets/56b06a64-47c6-4c99-9329-d074a34c096a" />
+     <img width="2129" height="1171" alt="스크린샷 2025-09-02 173800" src="https://github.com/user-attachments/assets/b7727d26-8edd-4f42-aa77-65cabe149727" />
 
   </details> 
 
@@ -149,7 +148,7 @@
 
   </details>
   
-- ### UML(**Unified Modeling Language)**
+- ### UML **(Unified Modeling Language)**
 
   UML을 자세히 보려면 [여기](https://www.canva.com/design/DAGw914rlWc/A6U_UKm-gqUP5vZRQ2hHxA/edit)를 클릭하세요
 
@@ -160,7 +159,7 @@
   </details>
   
 
-- ### ERD(**Entity Relationship Diagram)**
+- ### ERD **(Entity Relationship Diagram)**
 
   ERD를 자세히 보려면 [여기](https://www.erdcloud.com/d/cTij9aNCYr9CxJZnf)를 클릭하세요
 
@@ -341,3 +340,17 @@
    </details>
 
 ---
+## ⚠️ 5. Trouble Shooting
+| 담당자 | 문제 상황 | 원인 분석 | 해결 방법 |
+|--------|-----------|-----------|-----------|
+| 김성태 | 1) `alarm_id`가 NULL이 되어 알람 저장 실패 | `alarm_template` 테이블에서 전달한 키워드(`p_keyword`)로 `LIKE` 검색했으나 일치하는 템플릿이 없었음. 그 결과 `alarm_id`를 찾지 못해 NULL 상태로 `alarm_box`에 insert 시도됨 | 프로시저 내에서 키워드가 없거나 일치하지 않을 경우 최신 템플릿 하나를 보조 선택하도록 추가. `alarm_id`가 여전히 NULL일 경우 `LEAVE` 처리로 알림 insert 자체를 하지 않도록 안전장치 구현 |
+| 김성태 | 2) 상위 입찰 알림이 본인에게 발송됨 | `auction_bid` INSERT 시 가장 높은 입찰자를 찾을 때 방금 입찰한 유저와 같은 경우 발생 | `bid_id <> NEW.bid_id` 조건 추가하여 본인 제외 |
+| 김성태 | 3) 템플릿 키워드 컬럼이 없어 다양한 알림 분기 어려움 | `alarm_template`에는 별도 키 컬럼 없이 `alarm_content`만 존재. 다양한 문구 분리를 위해 정렬 불가능 또는 중복 발생 | 키워드로 `LIKE` 검색되도록 알람 등록 시 핵심 키워드 포함된 문구 사용. 예: '회원가입이 완료되었습니다.' → '회원가입' 키워드로 검색 가능 |
+| 이민욱 | 1) 낙찰/유찰 조건식 오류 | SQL에서 AND와 OR의 연산자 우선순위 문제. OR가 독립적으로 먼저 적용되어 종료 조건(auction_end_time <= NOW(6))이 무시된 채 bid_status IS NULL인 행이 전부 반환됨 | 괄호를 통해 조건을 명확히 묶어줌으로써 정상적으로 종료 조건이 적용되도록 수정. 종료 시간이 지난 후, 낙찰 또는 유찰 대상만 정확히 조회되도록 정상화 |
+| 이민욱 | 2) 동시 입찰 처리 문제 | 여러 사용자가 동시에 최초 입찰을 시도할 수 있어 단순 쿼리만으로는 데이터 정합성 깨짐(포인트 중복 차감, 동일 가격 중복 입찰) 발생 | 저장 프로시저와 트랜잭션 + 행 잠금(`FOR UPDATE`) 적용. 최초 입찰 시 경매 아이템 행 잠금, 포인트 차감과 경매 상태 변경 원자적 트랜잭션 처리, 종료 10분 이내 입찰 시 자동 연장. 이를 통해 동시 입찰 시 데이터 정합성 및 경매 상태 일관성 보장 |
+| 김상재 | 신고 업데이트 트리거 문제 | 같은 테이블을 update할 때 트리거 안에서 update가 트리거 실행과 충돌 발생 | `AFTER UPDATE` → `BEFORE UPDATE`로 변경. 트리거가 실행 중인 update 문과 충돌하지 않도록 하고, 트리거 안에서 `SET`만 정의하여 값 변경 가능하게 처리 |
+| 유한세 | 1) 프로시저 입력값으로 계좌 선택 불가 | 사용자가 계좌를 선택할 수 없고, `p_user_id`와 `p_payment_amount`만 입력 받음 | `p_user_id`, `p_payment_amount`, `p_account_id`를 입력 받아 사용자가 계좌 선택 가능하도록 수정 |
+| 유한세 | 2) 포인트 충전/환불 로그 문제 | 결제 로그(payment_log)와 포인트 로그(point_log)를 분리했으나, 실제 돈→포인트 충전과 포인트→실제 돈 환불 과정도 포인트 로그에 입력되어야 함. 이로 인해 회원 테이블 잔고와 로그 잔고 불일치 발생 | 결제 로그(payment_log): 실제 돈과 포인트 오가는 행위만 기록(충전, 환불)<br>포인트 로그(point_log): 포인트 거래 모두 기록(충전, 환불, 이전, 반환 등)<br>`point_log`의 `bid_id` NOT NULL → NULL로 변경: 충전 시 경매 아이디 필요 없음 |
+| 박연수 | 회원가입 insert 시 전화번호 정상 입력 안됨 | `user_phone` 속성이 INT로 되어 있어 010~ 번호가 10~으로 입력됨 | `user_phone` 컬럼을 VARCHAR로 수정 |
+| 박인수 | 질의 사항 작성 시 파일 데이터 없으면 상세 데이터 출력 오류 | `inquiry` 테이블과 `file` 테이블을 JOIN했으나 file 테이블에 내용이 없으면 오류 발생 | `inquiry_id`를 기준으로 LEFT JOIN하여 해당 `inquiry_id`와 연결된 file 테이블이 없어도 정상 출력 |
+
