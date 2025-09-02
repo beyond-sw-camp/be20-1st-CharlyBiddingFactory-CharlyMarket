@@ -131,10 +131,11 @@
 ## 🗂️ 4. 프로젝트 산출물
 
 - ### WBS (Work Breakdown Structure)
-  [여기](https://www.notion.so/25b36d2af8f580fab019e6d2211cd7a5?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)
+  WBS를 자세히 보려면 [여기](https://www.notion.so/25b36d2af8f580fab019e6d2211cd7a5?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)를 클릭하세요요
    <details>
   <summary>WBS 보기</summary>
-     <img width="1554" height="898" alt="image" src="https://github.com/user-attachments/assets/48f02766-0d68-480d-8291-60cb873770f7" />
+     
+   <img width="2548" height="1333" alt="스크린샷 2025-09-02 172357" src="https://github.com/user-attachments/assets/56b06a64-47c6-4c99-9329-d074a34c096a" />
 
   </details> 
 
@@ -336,9 +337,7 @@
    ![9  알림-1](https://github.com/user-attachments/assets/24894578-a166-44f5-98b4-d2bd183826bb)
       
    ![9  알림-2](https://github.com/user-attachments/assets/99f0650a-48e4-442c-ad4e-6dc80f6ca517)
-
-       
        
    </details>
 
-
+---
