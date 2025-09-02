@@ -183,8 +183,8 @@
    </details>
 
 - ### 통합테스트 시나리오 및 코드
-  통합테스트 시나리오를 자세히 보려면 
-  [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
+  통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
+  통합테스트 코드를 자세히 보려면 Integrated Test 폴더를 확인하세요
 
    <details>
      <summary><b>1️⃣ 회원 기능</b></summary>
