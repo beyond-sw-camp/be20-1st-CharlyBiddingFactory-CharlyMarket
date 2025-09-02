@@ -8,21 +8,22 @@
 ---
 ## 목차 (Table of Contents)
 
-1. [👩‍👧‍👦 멤버 소개](#-1-멤버-소개)
-2. [⚒️ 서비스 소개](#-2-서비스-소개)
-   - [1️⃣ 서비스 개요](#1️⃣-서비스-개요)
-   - [2️⃣ 차별화 포인트](#2️⃣-차별화-포인트)
-   - [3️⃣ 주요 기능](#3️⃣-주요-기능)
-   - [4️⃣ 기대 효과](#4️⃣-기대-효과)
-3. [🚀 기술 스택](#-3-기술-스택)
-4. [🗂️ 프로젝트 산출물](#-4-프로젝트-산출물)
-   - [WBS](#wbs)
-   - [요구사항 명세서](#요구사항-명세서)
-   - [UML](#uml)
-   - [ERD](#erd)
-   - [테스트 케이스 작성 및 테스트](#테스트-케이스-작성-및-테스트)
-   - [통합테스트 시나리오 및 코드](#통합테스트-시나리오-및-코드)
-5. [⚠️ 트러블 슈팅](#-5-trouble-shooting)
+1. [👩‍👧‍👦 1. 멤버 소개](#-1-멤버-소개)
+2. [⚒️ 2. 서비스 소개](#-2-서비스-소개)
+   - [1️⃣ 2.1 서비스 개요](#1️⃣-서비스-개요)
+   - [2️⃣ 2.2 차별화 포인트](#2️⃣-차별화-포인트)
+   - [3️⃣ 2.3 주요 기능](#3️⃣-주요-기능)
+   - [4️⃣ 2.4 기대 효과](#4️⃣-기대-효과)
+3. [🚀 3. 기술 스택](#-3-기술-스택)
+4. [🗂️ 4. 프로젝트 산출물](#-4-프로젝트-산출물)
+   - [🕖 WBS](#wbs)
+   - [📚 요구사항 명세서](#요구사항-명세서)
+   - [🖼️ UML](#uml)
+   - [🗺️ ERD](#erd)
+   - [🗞️ 테스트 케이스 작성 및 테스트](#테스트-케이스-작성-및-테스트)
+   - [🔁 통합테스트 시나리오 및 코드](#통합테스트-시나리오-및-코드)
+5. [⚠️ 5. Trouble Shooting](#-5-trouble-shooting)
+
 
 
 ---
@@ -139,7 +140,7 @@
 
 ## 🗂️ 4. 프로젝트 산출물
 
-- ### WBS **(Work Breakdown Structure)**
+- ### 🕖 WBS **(Work Breakdown Structure)**
   WBS를 자세히 보려면 [여기](https://www.notion.so/25b36d2af8f580fab019e6d2211cd7a5?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)를 클릭하세요요
    <details>
   <summary>WBS 보기</summary>
@@ -148,7 +149,7 @@
   </details> 
 
 
-- ### 요구사항 명세서
+- ### 📚 요구사항 명세서
 
   요구사항 명세서를 자세히 보려면 [여기](https://docs.google.com/spreadsheets/d/1gjJ8mYfv-hq05CkPhD09bkD4a0_2K8PejZSjfwREuMI/edit?gid=1507918672#gid=1507918672)를 클릭하세요
   <details>
@@ -157,7 +158,7 @@
 
   </details>
   
-- ### UML **(Unified Modeling Language)**
+- ### 🖼️ UML **(Unified Modeling Language)**
 
   UML을 자세히 보려면 [여기](https://www.canva.com/design/DAGw914rlWc/A6U_UKm-gqUP5vZRQ2hHxA/edit)를 클릭하세요
 
@@ -168,7 +169,7 @@
   </details>
   
 
-- ### ERD **(Entity Relationship Diagram)**
+- ### 🗺️ ERD **(Entity Relationship Diagram)**
 
   ERD를 자세히 보려면 [여기](https://www.erdcloud.com/d/cTij9aNCYr9CxJZnf)를 클릭하세요
 
@@ -178,7 +179,7 @@
 
   </details>
 
-- ### 테스트 케이스 작성 및 테스트
+- ### 🗞️ 테스트 케이스 작성 및 테스트
   테스트 코드를 자세히 보려면 db > domain 을 확인해주세요
   테스트 케이스를 자세히 보려면 [여기](https://www.notion.so/25e36d2af8f580c69d25dd86f9b528f3?source=copy_link)를 클릭하세요
    <details>
@@ -191,7 +192,7 @@
    <img width="2487" height="804" alt="스크린샷 2025-09-02 093455" src="https://github.com/user-attachments/assets/327217ba-75e3-4b43-a4bf-7c93adcbf503" />
    </details>
 
-- ### 통합테스트 시나리오 및 코드
+- ### 🔁 통합테스트 시나리오 및 코드
   통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
   통합테스트 코드를 자세히 보려면 Integrated Test 폴더를 확인하세요
 
@@ -347,6 +348,55 @@
    ![9  알림-2](https://github.com/user-attachments/assets/99f0650a-48e4-442c-ad4e-6dc80f6ca517)
        
    </details>
+- ### 🔐LINUX 이중화(Replication)
+  안전한 데이터베이스 관리를 위해 master / slave 를 나누어서 데이터를 보관한다
+
+  <details>
+  <summary><b>데이터베이스 생성</b></summary>
+   <br>
+   - 마리아db 루트계정 접속 <br>
+     : cmd > sudo mariadb -u root -p <br><br>
+   - charlymarket DB를 생성 <br>
+     : create database charlymarket; <br><br>
+   - 생성 확인 <br>
+     : show databses;<br>
+   <img width="297" height="166" alt="데이터베이스 생성" src="https://github.com/user-attachments/assets/8b7128c8-dee6-4d3c-8740-e9adb5fb1cfa" />
+  </details>
+
+  <details>
+  <summary><b>테이블 및 테스트데이터 삽입</b></summary><br>
+   - <b>create 테이블 , insert 테스트 데이터</b><br><br>
+     테이블 , 테스트 데이터<br>
+     [여기](https://www.notion.so/8-2-DB-26036d2af8f5808ab2c9ebea34b8378f?source=copy_link)
+
+  </details>
+
+  <details>
+  <summary><b>master / slave</b></summary><br>
+     <b>마스터 db 를 복제한 slave db를 생성</b><br>
+     master 계정과 slave 계정을 나누어서 환경설정(포트 , ip , position ...) <br><br>
+     자세한 설정 방법은 <br>
+     [여기]([https://www.notion.so/8-2-DB-26036d2af8f5808ab2c9ebea34b8378f?source=copy_link](https://www.notion.so/blimu/25c2fdb14148813abc10d9713d491507?source=copy_link))
+
+  </details>
+
+  <details>
+  <summary><b>Replication 확인</b></summary><br>
+   - 나누어진 Db를 확인해 본다<br>
+   <br>
+     update 테스트 <br>
+     
+     ![replication_charly](https://github.com/user-attachments/assets/e21d1d4b-df6b-439c-a529-b54988efbaec)
+
+
+   <br><br>
+     insert 테스트 <br> 
+    ![replication_charly2](https://github.com/user-attachments/assets/986e919a-a871-4b37-88cc-ea1789611f92)
+
+
+
+
+  </details>
 
 ---
 ## ⚠️ 5. Trouble Shooting
@@ -362,4 +412,5 @@
 | 유한세 | 2) 포인트 충전/환불 로그 문제 | 결제 로그(payment_log)와 포인트 로그(point_log)를 분리했으나, 실제 돈→포인트 충전과 포인트→실제 돈 환불 과정도 포인트 로그에 입력되어야 함. 이로 인해 회원 테이블 잔고와 로그 잔고 불일치 발생 | 결제 로그(payment_log): 실제 돈과 포인트 오가는 행위만 기록(충전, 환불)<br>포인트 로그(point_log): 포인트 거래 모두 기록(충전, 환불, 이전, 반환 등)<br>`point_log`의 `bid_id` NOT NULL → NULL로 변경: 충전 시 경매 아이디 필요 없음 |
 | 박연수 | 회원가입 insert 시 전화번호 정상 입력 안됨 | `user_phone` 속성이 INT로 되어 있어 010~ 번호가 10~으로 입력됨 | `user_phone` 컬럼을 VARCHAR로 수정 |
 | 박인수 | 질의 사항 작성 시 파일 데이터 없으면 상세 데이터 출력 오류 | `inquiry` 테이블과 `file` 테이블을 JOIN했으나 file 테이블에 내용이 없으면 오류 발생 | `inquiry_id`를 기준으로 LEFT JOIN하여 해당 `inquiry_id`와 연결된 file 테이블이 없어도 정상 출력 |
+
 
