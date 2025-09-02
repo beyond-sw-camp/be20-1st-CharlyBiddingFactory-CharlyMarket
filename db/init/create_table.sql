@@ -148,7 +148,7 @@ CREATE TABLE alarm_box (
 	alarm_check CHAR(1) NULL COMMENT '알림을 확인 여부 (Y : 확인)',
 	user_id INT NOT NULL COMMENT '알림을 받는 회원',
 	alarm_id INT NOT NULL COMMENT '알림 유형',
-	auction_id INT NOT NULL COMMENT '물품 id',
+	auction_id INT NULL COMMENT '물품 id',
 	alarm_content VARCHAR(999) COMMENT '알림내용',
 	PRIMARY KEY(alarm_box_id),
 	FOREIGN KEY(user_id) REFERENCES user(user_id),
