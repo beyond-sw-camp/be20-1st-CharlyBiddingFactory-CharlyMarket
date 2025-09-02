@@ -135,7 +135,7 @@ DROP PROCEDURE update_inquiry_answer;
 DELIMITER //
 CREATE PROCEDURE update_inquiry_answer(
     IN check_user_id INT,    -- 사용자의 ID
-    IN check_inquiry_id INT   -- 수정할 공지사항의 ID
+    IN check_inquiry_id INT   -- 수정할 문의 글의 ID
 )
 BEGIN
     DECLARE check_inquiry_status CHAR(1);
