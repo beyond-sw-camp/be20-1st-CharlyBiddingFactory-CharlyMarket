@@ -183,162 +183,162 @@
    </details>
 
 - ### 통합테스트 시나리오 및 코드
-  통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
-  
-<details>
-  <summary><b>1️⃣ 회원 기능</b></summary>
+  통합테스트 시나리오를 자세히 보려면 
+  [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
 
-  <b>1. grade</b> <br>
-  - B: 10% 수수료<br>
-  - S: 7% 수수료<br>
-  - G: 5% 수수료<br>
-  - P: 3% 수수료<br>
+   <details>
+     <summary><b>1️⃣ 회원 기능</b></summary>
+   
+     <b>1. grade</b> <br>
+     - B: 10% 수수료<br>
+     - S: 7% 수수료<br>
+     - G: 5% 수수료<br>
+     - P: 3% 수수료<br>
+   
+     <b>2. user</b> <br>
+     - user_id=1 : **홍길동**, 일반회원 (grade_id=1, 등급 B, 잔고 0, 닉네임 "길동이")<br>
+     - user_id=2 : **김영희**, 일반회원 (grade_id=2, 등급 S, 잔고 0, 닉네임 "영희짱")<br>
+     - user_id=3 : **관리자(Admin)**, 관리자 계정 (user_role='ADMIN')<br>
+     - user_id=4 : **한철수**, 일반회원 (grade_id=3, 등급 G, 잔고 0, 닉네임 "난철수")<br><br>
+     
+     ![1 회원가입](https://github.com/user-attachments/assets/9dba01e7-4441-4509-9cde-642f526a2c01)
+   </details>
 
-  <b>2. user</b> <br>
-  - user_id=1 : **홍길동**, 일반회원 (grade_id=1, 등급 B, 잔고 0, 닉네임 "길동이")<br>
-  - user_id=2 : **김영희**, 일반회원 (grade_id=2, 등급 S, 잔고 0, 닉네임 "영희짱")<br>
-  - user_id=3 : **관리자(Admin)**, 관리자 계정 (user_role='ADMIN')<br>
-  - user_id=4 : **한철수**, 일반회원 (grade_id=3, 등급 G, 잔고 0, 닉네임 "난철수")<br><br>
-  
-![1 회원가입](https://github.com/user-attachments/assets/9dba01e7-4441-4509-9cde-642f526a2c01)
+   <details>
+     <summary><b>2️⃣ 계좌 등록 & 충전</b></summary>
+   
+     <b>1. account</b> <br>
+     - 홍길동 → 농협 111-222-333 (account_id=1)<br>
+     - 김영희 → 신한 444-555-666 (account_id=2)<br>
+     - 한철수 → 우리 777-888-999 (account_id=3)<br>
+   
+     <b>2. payment_log</b> <br>
+     - 홍길동: 100,000원 충전 (C 타입), 수수료 10% 적용 → conversion_amount=90,000<br>
+     - 김영희: 80,000원 충전, 수수료 7% 적용 → conversion_amount=74,400<br>
+     - 한철수: 1,000,000원 충전, 수수료 5% 적용 → conversion_amount=950,000<br>
+   
+     <b>3. user</b> <br>
+     - 홍길동 → user_balance=90,000 으로 갱신<br><br>
+     
+     ![2  계좌등록 및 충전](https://github.com/user-attachments/assets/64b9cd5e-5682-466c-b6e0-ae4ad5e7aedc)
+   </details>
 
-</details>
+   <details>
+     <summary><b>3️⃣ 공지사항 & 문의</b></summary>
+   
+     <b>1. notice</b> <br>
+     - 관리자 → “경매 물품 가격 오류” 공지 등록 (notice_id=1)<br>
+     - 첨부파일 file_id=1 : 점검 이미지 첨부<br>
+     - 관리자 → “공지사항 문제발생” 공지사항 수정<br>
+     - 관리자 → “공지사항 문제발생 글 삭제”<br>
+   
+     <b>2. inquiry</b> <br>
+     - 김영희 → “배송 관련 문의 드립니다.” 문의 작성 (inquiry_id=1)<br>
+     - 첨부파일 file_id=2 : 문의 스크린샷 첨부<br>
+     - 관리자 → 답변 등록: “빠른 시일 내 해결하겠습니다.”<br><br>
+   
+     ![3  공지사항 및 문의](https://github.com/user-attachments/assets/1fede5c1-6b48-4993-b64c-628d4a915ed7)
+   </details>
 
+   <details>
+     <summary><b>4️⃣ 경매등록 </b></summary>
+   
+     <b>1. category</b> <br>
+     - category_id=1 → “전자기기”(I)<br>
+     - category_id=2 → “패션”(I)<br>
+     - category_id=3 → “가구”(I)<br>
+     - category_id=14 → “회원”(A)<br>
+     - category_id=17 → “욕설”(R)<br>
+   
+     <b>2. auction_item</b> <br>
+     - 홍길동 → “아이폰 14 Pro 중고” 등록 (auction_id=1, 시작가 50,000, 입찰 단위 1,000)<br>
+     - 첨부파일 file_id=3 : 상품 사진 등록<br>
+   
+     <b>3. favorite</b> <br>
+     - 김영희 → 해당 물품 즐겨찾기 (user_id=2, auction_id=1)<br><br>
+   
+     ![4  경매등록](https://github.com/user-attachments/assets/c88e5a3d-782e-4df2-8035-5660f6811f67)
+   </details>
 
-  <details>
-   <summary><b>2️⃣ 계좌 등록 & 충전</b></summary>
+   <details>
+     <summary><b>5️⃣ 입찰 & 낙찰</b></summary>
+   
+     <b>1. auction_bid</b> <br>
+     - 김영희 → 50,000원 시작 입찰<br>
+     - 한철수 → 60,000원으로 입찰<br>
+     - 최고가 → 한철수 낙찰 (success_status=Y)<br>
+   
+     <b>2. auction_item</b> <br>
+     - current_price=60,000, bid_status=F (낙찰완료)<br>
+   
+     <b>3. point_log</b> <br>
+     - 한철수 → 포인트 60,000 차감 (U 타입, point_amount=30,000 남음)<br>
+   
+     <b>4. alarm_box</b> <br>
+     - 홍길동 → "경매가 시작되었습니다"<br>
+     - 김영희 → “새로운 낙찰자가 등장하였습니다” 알림<br>
+     - 홍길동, 한철수 → “물품이 낙찰되었습니다” 알림<br><br>
+   
+     ![5-1  입찰](https://github.com/user-attachments/assets/d02416da-66ae-4a55-a853-b820b76c60da)  
+     ![5-2  낙찰re](https://github.com/user-attachments/assets/cea2314a-eb45-48d3-ad01-5293dc7e9322)
 
-  <b>1. account</b> <br>
-  - 홍길동 → 농협 111-222-333 (account_id=1)<br>
-  - 김영희 → 신한 444-555-666 (account_id=2)<br>
-  - 한철수 → 우리 777-888-999 (account_id=3)<br>
+   </details>
 
-  <b>2. payment_log</b> <br>
-  - 홍길동: 100,000원 충전 (C 타입), 수수료 10% 적용 → conversion_amount=90,000<br>
-  - 김영희: 80,000원 충전, 수수료 7% 적용 → conversion_amount=74,400<br>
-  - 한철수: 1,000,000원 충전, 수수료 5% 적용 → conversion_amount=950,000<br>
+   <details>
+     <summary><b>6️⃣ 배송</b></summary>
+   
+     <b>1. delivery</b> <br>
+     - 한철수 → 배송지 “서울 광진구 긴고랑로4길 13” 등록 (delivery_id=1, status=E)<br>
+     - 홍길동 → 운송장번호 “5231582571234” 입력 (status=I)<br>
+     - 한철수 → 수령 확인 (status=S)<br><br>
+   
+     ![6  배송](https://github.com/user-attachments/assets/613cad97-b0f5-44d2-956d-d1a50f737738)
+   </details>
+   
+   <details>
+     <summary><b>7️⃣ 리뷰 & 신고</b></summary>
+   
+     <b>1. review</b> <br>
+     - 한철수 → “상품 상태가 좋아요!” 별점 5점 후기 (review_id=1, reviewer_id=4, reviewee_id=1)<br>
+     - 첨부파일 file_id=3 : 리뷰 사진 첨부<br>
+   
+     <b>2. report</b> <br>
+     - 다른 회원(예: user_id=4 한철수) → “홍길동이 상품 설명과 다른 물품을 올렸어요” 신고 (report_id=1)<br>
+     - 관리자 처리(handler_id=3), report_status=Y, report_action='경고 조치 완료'<br><br>
+   
+     ![7  리뷰 및 신고](https://github.com/user-attachments/assets/b3c631d3-d849-40aa-8c4e-6557004f008c)
+   </details>
 
-  <b>3. user</b> <br>
-  - 홍길동 → user_balance=90,000 으로 갱신<br><br>
-  
-![2  계좌등록 및 충전](https://github.com/user-attachments/assets/64b9cd5e-5682-466c-b6e0-ae4ad5e7aedc)
+   <details>
+     <summary><b>8️⃣ 로그</b></summary>
+   
+     <b>1. user_log</b> <br>
+     - 홍길동 → 닉네임 “길동이” → “홍길동짱” 수정 (컬럼명: user_nickname)<br><br>
+   
+     ![8  로그](https://github.com/user-attachments/assets/dd2cfdd9-bc3d-4585-84c2-ce9855400f06)
+   </details>
 
-</details>
+   <details>
+     <summary><b>9️⃣ 알림</b></summary>
+   
+     <b>1. alarm_template</b> <br>
+     - 관리자가 회원들에게 발송할 알림 메시지 등록<br>
+       → “경매 시작되었습니다”<br>
+       → “새로운 입찰자가 등장하였습니다”<br>
+       → “낙찰되었습니다”<br>
+   
+     <b>2. alarm_box</b> <br>
+     - 회원이 경매를 시작 시 관리자가 등록한 알림 메시지가 발송되며, 알림 박스에 저장됨<br>
+       - 경매가 시작되었습니다 : 영희(첫 입찰자) 등장 시 판매자(홍길동)에게 전송<br>
+       - 새로운 입찰자가 등장하였습니다: 한철수(상위 입찰자 등장 시) → 김영희에게 알림 발송<br>
+       - 낙찰되었습니다: 한철수(낙찰자)와 홍길동에게 발송<br><br>
+       
+   ![9  알림-1](https://github.com/user-attachments/assets/24894578-a166-44f5-98b4-d2bd183826bb)
+      
+   ![9  알림-2](https://github.com/user-attachments/assets/99f0650a-48e4-442c-ad4e-6dc80f6ca517)
 
-  <details>
-  <summary><b>3️⃣ 공지사항 & 문의</b></summary>
+       
+       
+   </details>
 
-  <b>1. notice</b> <br>
-  - 관리자 → “경매 물품 가격 오류” 공지 등록 (notice_id=1)<br>
-  - 첨부파일 file_id=1 : 점검 이미지 첨부<br>
-  - 관리자 → “공지사항 문제발생” 공지사항 수정<br>
-  - 관리자 → “공지사항 문제발생 글 삭제”<br>
-
-  <b>2. inquiry</b> <br>
-  - 김영희 → “배송 관련 문의 드립니다.” 문의 작성 (inquiry_id=1)<br>
-  - 첨부파일 file_id=2 : 문의 스크린샷 첨부<br>
-  - 관리자 → 답변 등록: “빠른 시일 내 해결하겠습니다.”<br><br>
-![3  공지사항 및 문의](https://github.com/user-attachments/assets/1fede5c1-6b48-4993-b64c-628d4a915ed7)
-
-</details>
-
-  <details>
-  <summary><b>4️⃣ 경매등록 </b></summary>
-
-  <b>1. category</b> <br>
-  - category_id=1 → “전자기기”(I)<br>
-  - category_id=2 → “패션”(I)<br>
-  - category_id=3 → “가구”(I)<br>
-  - category_id=14 → “회원”(A)<br>
-  - category_id=17 → “욕설”(R)<br>
-
-  <b>2. auction_item</b> <br>
-  - 홍길동 → “아이폰 14 Pro 중고” 등록 (auction_id=1, 시작가 50,000, 입찰 단위 1,000)<br>
-  - 첨부파일 file_id=3 : 상품 사진 등록<br>
-
-  <b>3. favorite</b> <br>
-  - 김영희 → 해당 물품 즐겨찾기 (user_id=2, auction_id=1)<br><br>
-![4  경매등록](https://github.com/user-attachments/assets/c88e5a3d-782e-4df2-8035-5660f6811f67)
-
-</details>
-
-  <details>
-  <summary><b>5️⃣ 입찰 & 낙찰</b></summary>
-
-  <b>1. auction_bid</b> <br>
-  - 김영희 → 50,000원 시작 입찰<br>
-  - 한철수 → 60,000원으로 입찰<br>
-  - 최고가 → 한철수 낙찰 (success_status=Y)<br>
-
-  <b>2. auction_item</b> <br>
-  - current_price=60,000, bid_status=F (낙찰완료)<br>
-
-  <b>3. point_log</b> <br>
-  - 한철수 → 포인트 60,000 차감 (U 타입, point_amount=30,000 남음)<br>
-
-  <b>4. alarm_box</b> <br>
-  - 홍길동 → "경매가 시작되었습니다"<br>
-  - 김영희 → “새로운 낙찰자가 등장하였습니다” 알림<br>
-  - 홍길동, 한철수 → “물품이 낙찰되었습니다” 알림<br><br>
-![5-1  입찰](https://github.com/user-attachments/assets/d02416da-66ae-4a55-a853-b820b76c60da)
-![5-2  낙찰](https://github.com/user-attachments/assets/ca3288cd-a45f-44d9-8fdd-a4ca3395aff4)
-
-
-</details>
-
-  <details>
-  <summary><b>6️⃣ 배송</b></summary>
-
-  <b>1. delivery</b> <br>
-  - 한철수 → 배송지 “서울 광진구 긴고랑로4길 13” 등록 (delivery_id=1, status=E)<br>
-  - 홍길동 → 운송장번호 “5231582571234” 입력 (status=I)<br>
-  - 한철수 → 수령 확인 (status=S)<br><br>
-
-![6  배송](https://github.com/user-attachments/assets/613cad97-b0f5-44d2-956d-d1a50f737738)
-
-</details>
-
-  <details>
-  <summary><b>7️⃣ 리뷰 & 신고</b></summary>
-
-  <b>1. review</b> <br>
-  - 한철수 → “상품 상태가 좋아요!” 별점 5점 후기 (review_id=1, reviewer_id=4, reviewee_id=1)<br>
-  - 첨부파일 file_id=3 : 리뷰 사진 첨부<br>
-
-  <b>2. report</b> <br>
-  - 다른 회원(예: user_id=4 한철수) → “홍길동이 상품 설명과 다른 물품을 올렸어요” 신고 (report_id=1)<br>
-  - 관리자 처리(handler_id=3), report_status=Y, report_action='경고 조치 완료'<br><br>
-![7  리뷰 및 신고](https://github.com/user-attachments/assets/b3c631d3-d849-40aa-8c4e-6557004f008c)
-
-</details>
-
-  <details>
-  <summary><b>8️⃣ 로그</b></summary>
-
-  <b>1. user_log</b> <br>
-  - 홍길동 → 닉네임 “길동이” → “홍길동짱” 수정 (컬럼명: user_nickname)<br><br>
-
-![8  로그](https://github.com/user-attachments/assets/dd2cfdd9-bc3d-4585-84c2-ce9855400f06)
-
-</details>
-
-  <details>
-  <summary><b>9️⃣ 알림</b></summary>
-
-  <b>1. alarm_template</b> <br>
-  - 관리자가 회원들에게 발송할 알림 메시지 등록<br>
-    → “경매 시작되었습니다”<br>
-    → “새로운 입찰자가 등장하였습니다”<br>
-    → “낙찰되었습니다”<br>
-
-  <b>2. alarm_box</b> <br>
-  - 회원이 경매를 시작 시 관리자가 등록한 알림 메시지가 발송되며, 알림 박스에 저장됨<br>
-    - 경매가 시작되었습니다 : 영희(첫 입찰자) 등장 시 판매자(홍길동)에게 전송<br>
-    - 새로운 입찰자가 등장하였습니다: 한철수(상위 입찰자 등장 시) → 김영희에게 알림 발송<br>
-    - 낙찰되었습니다: 한철수(낙찰자)와 홍길동에게 발송<br>
-    
-</details>
-
-
----
 
