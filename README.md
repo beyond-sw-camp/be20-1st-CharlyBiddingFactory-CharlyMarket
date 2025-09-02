@@ -37,6 +37,7 @@
 ---
 
 ## ⚒️ 2. 서비스 소개
+   <img width="3390" height="1873" alt="ERD" src="https://github.com/user-attachments/assets/4c38f6dc-ea0e-4b20-b3fc-32493d11fbe0" />
 
 ### 1️⃣ 서비스 개요
 찰리마켓은 **⭐실시간 경매 시스템 기반 중고거래 플랫폼⭐**으로, 합리적인 가격 형성과 안전한 거래를 지원합니다.  
@@ -130,24 +131,62 @@
 ## 🗂️ 4. 프로젝트 산출물
 
 - ### WBS (Work Breakdown Structure)
-<사진>
+  [여기](https://www.notion.so/25b36d2af8f580fab019e6d2211cd7a5?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)
+   <details>
+  <summary>WBS 보기</summary>
+     <img width="1554" height="898" alt="image" src="https://github.com/user-attachments/assets/48f02766-0d68-480d-8291-60cb873770f7" />
+
+  </details> 
+
 
 - ### 요구사항 명세서
 
   요구사항 명세서를 자세히 보려면 [여기](https://docs.google.com/spreadsheets/d/1gjJ8mYfv-hq05CkPhD09bkD4a0_2K8PejZSjfwREuMI/edit?gid=1507918672#gid=1507918672)를 클릭하세요
+  <details>
+  <summary>요구사항 명세서 보기</summary>
+     <img width="1410" height="1266" alt="요구사항 명세서" src="https://github.com/user-attachments/assets/83397f68-132d-46d7-b6ce-07f915a21156" />
 
-<img width="1410" height="1266" alt="요구사항 명세서" src="https://github.com/user-attachments/assets/83397f68-132d-46d7-b6ce-07f915a21156" />
-
+  </details>
+  
 - ### UML(**Unified Modeling Language)**
 
   UML을 자세히 보려면 [여기](https://www.canva.com/design/DAGw914rlWc/A6U_UKm-gqUP5vZRQ2hHxA/edit)를 클릭하세요
 
-<img width="1056" height="1194" alt="UML" src="https://github.com/user-attachments/assets/6a110abd-eecb-4831-9cde-cda714dc802c" />
+  <details>
+  <summary>UML 보기</summary>
+     <img width="1056" height="1194" alt="UML" src="https://github.com/user-attachments/assets/6a110abd-eecb-4831-9cde-cda714dc802c" />
 
+  </details>
+  
 
 - ### ERD(**Entity Relationship Diagram)**
 
   ERD를 자세히 보려면 [여기](https://www.erdcloud.com/d/cTij9aNCYr9CxJZnf)를 클릭하세요
-<img width="3390" height="1873" alt="ERD" src="https://github.com/user-attachments/assets/4c38f6dc-ea0e-4b20-b3fc-32493d11fbe0" />
 
+  <details>
+  <summary>ERD 보기</summary>
+     <img width="3390" height="1873" alt="ERD" src="https://github.com/user-attachments/assets/4c38f6dc-ea0e-4b20-b3fc-32493d11fbe0" />
+
+  </details>
+
+- ### 테스트 케이스 작성 및 테스트
+  테스트 코드를 자세히 보려면 db > domain 을 확인해주세요
+  테스트 케이스를 자세히 보려면 [여기](https://www.notion.so/25e36d2af8f580c69d25dd86f9b528f3?source=copy_link)를 클릭하세요
+   <details>
+     <summary>테스트 케이스</summary>
+        <img width="2464" height="1175" alt="스크린샷 2025-09-02 093242" src="https://github.com/user-attachments/assets/21d1be15-dc4d-4f23-9893-4b43b171c835" />
+   <img width="2491" height="1206" alt="스크린샷 2025-09-02 093325" src="https://github.com/user-attachments/assets/f173ccfd-0ee4-4b60-b848-3cfeab874e11" />
+   <img width="2461" height="1256" alt="스크린샷 2025-09-02 093352" src="https://github.com/user-attachments/assets/a995a45f-9316-4555-8ffc-c02c053ee9e8" />
+   <img width="2472" height="1190" alt="스크린샷 2025-09-02 093416" src="https://github.com/user-attachments/assets/b3f6b28a-33e2-4626-8d99-035a1c14140c" />
+   <img width="2474" height="1268" alt="스크린샷 2025-09-02 093441" src="https://github.com/user-attachments/assets/505a8c8a-6a3c-4218-9793-7dd5046a8a61" />
+   <img width="2487" height="804" alt="스크린샷 2025-09-02 093455" src="https://github.com/user-attachments/assets/327217ba-75e3-4b43-a4bf-7c93adcbf503" />
+   </details>
+
+- ### 통합테스트 시나리오 및 코드
+  통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
+  <details>
+  <summary>시나리오</summary>
+     <img width="1179" height="1429" alt="merged_side_by_side" src="https://github.com/user-attachments/assets/eb8504ee-2406-43c0-ab76-bb8aa6f54135" />
+
+  </details> 
 ---
