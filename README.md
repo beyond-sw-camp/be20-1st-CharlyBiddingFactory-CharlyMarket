@@ -2,7 +2,8 @@
 
 찰리 마켓은 기존 중고거래 방식에서 벗어나 경매를 통해 합리적인 가격에 구매할 수 있는 서비스 입니다 
 <div align="center">
-<img width="1536" height="1024" alt="KakaoTalk_20250903_094247885" src="https://github.com/user-attachments/assets/43eaa58d-83f9-4909-8650-6fe67f844698" />
+
+<img width="1536" height="1024" alt="KakaoTalk_20250903_101910302" src="https://github.com/user-attachments/assets/1235bd56-02a4-4ad4-9e2c-05138c75ded2" />
 
 </div>
 
