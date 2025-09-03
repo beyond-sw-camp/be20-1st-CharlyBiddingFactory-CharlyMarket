@@ -402,7 +402,8 @@
   </details>
 
 - ### ↗️ 성능 개선
-  인덱스를 통해 성능을 개선한다
+     성능 개선을 자세히 보려면 [여기](https://www.notion.so/26236d2af8f580fcb5a8e3ee5dfbdeb4?v=25b36d2af8f5802b830b000cb9f5aefe&source=copy_link)를 클릭하세요  
+  
      <details>
   <summary><b>1.경매 종료 프로세스 -인덱스 튜닝 효과</b></summary>
      - **Before: 풀스캔**
