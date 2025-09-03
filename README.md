@@ -2,7 +2,8 @@
 
 찰리 마켓은 기존 중고거래 방식에서 벗어나 경매를 통해 합리적인 가격에 구매할 수 있는 서비스 입니다 
 <div align="center">
-<img width="939" height="483" alt="로고 2" src="https://github.com/user-attachments/assets/3520e3f2-a6a5-4d3e-8108-b5714da27cf3" />
+<img width="1536" height="1024" alt="KakaoTalk_20250903_094247885" src="https://github.com/user-attachments/assets/43eaa58d-83f9-4909-8650-6fe67f844698" />
+
 </div>
 
 ---
@@ -16,13 +17,15 @@
    - [4️⃣ 2.4 기대 효과](#4️⃣-기대-효과)
 3. [🚀 3. 기술 스택](#-3-기술-스택)
 4. [🗂️ 4. 프로젝트 산출물](#-4-프로젝트-산출물)
-   - [🕖 WBS](#wbs)
+   - [🕖 WBS](#WBS)
    - [📚 요구사항 명세서](#요구사항-명세서)
    - [🖼️ UML](#uml)
    - [🗺️ ERD](#erd)
    - [🗞️ 테스트 케이스 작성 및 테스트](#테스트-케이스-작성-및-테스트)
    - [🔁 통합테스트 시나리오 및 코드](#통합테스트-시나리오-및-코드)
+   - [↗️ 성능 개선](#-성능-개선)
 5. [⚠️ 5. Trouble Shooting](#-5-trouble-shooting)
+6. [🍺 6. 프로젝트 회고록](#-6-프로젝트-회고록)
 
 
 
@@ -193,7 +196,7 @@
    </details>
 
 - ### 🔁 통합테스트 시나리오 및 코드
-  통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요
+  통합테스트 시나리오를 자세히 보려면 [여기](https://www.notion.so/26136d2af8f5802e914afbc54cf37e47?source=copy_link)를 클릭하세요  
   통합테스트 코드를 자세히 보려면 Integrated Test 폴더를 확인하세요
 
    <details>
@@ -394,7 +397,114 @@
     ![replication_charly2](https://github.com/user-attachments/assets/986e919a-a871-4b37-88cc-ea1789611f92)
 
 
+  </details>
 
+- ### ↗️ 성능 개선
+  인덱스를 통해 성능을 개선한다
+     <details>
+  <summary><b>1.경매 종료 프로세스 -인덱스 튜닝 효과</b></summary>
+     - **Before: 풀스캔**
+    
+    ```sql
+    Sort: auction_item.auction_end_time
+      Filter: auction_end_time <= NOW(6)
+            & (bid_status='B' OR bid_status IS NULL)
+      Table scan on auction_item
+    (cost=2673.52, rows≈29,969, time≈23.731s)
+    ```
+    
+    - **After: 인덱스 도입 (covering range scan)**
+    
+    ```sql
+    Covering index range scan using idx_auction_item_end_status
+      over (auction_end_time <= '2025-09-02 11:49:54' AND bid_status <= 'B')
+      + Filter(동일)
+    (cost=51.07, rows≈248, time≈0.236s)
+    ```
+    
+    ## 성능 인사이트 (전 → 후)
+    
+    - ⏱️ **실행시간**: **23.731s → 0.236s**
+        
+        → **약 100.6× 빠름**, **시간 99.01% 절감**
+        
+    - 📉 **옵티마이저 비용**: **2673.52 → 51.07**
+        
+        → **약 52.35× 개선**, **비용 98.09% 감소**
+        
+    - 📦 **터치한 행 수(스캔)**: **≈30,000 → 248**
+        
+        → **99.17% 감소**
+  </details>
+
+   <details>
+  <summary><b>2.확인된 문의 글 조회</b></summary><br>
+     - Before: 풀스캔
+    
+    ```sql
+    Sort: inquiry.created_at DESC
+      Filter: inquiry.inquiry_status = 'Y'
+      Table scan on inquiry
+    (cost=32234, rows≈20000, time≈0.149s)
+    ```
+    
+    - After: 인덱스 도입
+    
+    ```sql
+    Index lookup using idx_inquiry_answer_status
+      over (inquiry_status = 'Y')
+      + Filter: (동일)
+    (cost=4860, rows≈20000, time≈0.053s)
+    ```
+    
+    ## 성능 인사이트 (전 → 후)
+    
+    - ⏱️ **실행시간**: 0.149s → 0.053s
+        
+        → 약 2.8배 빨라졌으며, 시간은 64.4% 절감되었습니다.
+        
+    - 📉 **옵티마이저 비용**: 32,234 → 4,860
+        
+        → 약 6.6배 개선되었으며, 비용은 84.9% 감소했습니다.
+        
+    - 📦 **터치한 행 수(스캔)**: ≈320,002 → 20,000
+        
+        → 93.8% 감소했습니다.
+
+  </details>
+
+  <details>
+  <summary><b>3.입찰/낙찰 목록 – 정렬/조인 튜닝 효과</b></summary><br>
+   - **Before: 파일소트 + 풀테이블 스캔 드라이빙**
+    
+    ```sql
+    Sort: ab.created_at DESC
+      Table scan on auction_bid AS ab
+    Nested loop ... (조인은 모두 PK 단건 lookup)
+    (actual time=29.259..71.175 rows=30008)
+    ```
+    
+    - **After: 인덱스 역방향 커버링 스캔 드라이빙**
+    
+    ```sql
+    Covering index scan on ab using idx_ab_created_at (reverse)
+      -- (created_at, auction_id, user_id, bid_amount, success_status)
+    Nested loop ... (조인은 모두 PK 단건 lookup)
+    (actual time=0.293..48.873 rows=30008)
+    ```
+    
+    ## 성능 인사이트 (전 → 후)
+    
+    - ⚡ **첫 로우 응답(TTFB)**: **29.259s → 0.293s**
+        
+        → **약 99.86× 빠름**, **시간 99.00% 절감**
+        
+    - ⏱ **전체 완료 시간**: **71.175s → 48.873s**
+        
+        → **약 1.46× 빠름**, **시간 31.33% 절감**
+        
+    - 🧹 **파일소트 제거**: `Sort` 단계 소멸 → 인덱스 순서로 바로 스트리밍
+    - 🧰 **I/O 패턴 개선**: `auction_bid`는 인덱스만으로 **정렬+조인키 커버** → 랜덤 I/O 감소
 
   </details>
 
@@ -416,7 +526,7 @@
 
 ---
 
-# 프로젝트 회고록
+# 🍺 6. 프로젝트 회고록
 
 | 👤 이름       | 📝 내용 |
 |---------------|---------|
