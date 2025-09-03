@@ -1,5 +1,6 @@
 # **📦 찰리마켓 - 경매 기반 중고거래 플랫폼**
 
+
 찰리 마켓은 기존 중고거래 방식에서 벗어나 경매를 통해 합리적인 가격에 구매할 수 있는 서비스 입니다 
 <div align="center">
 
@@ -45,10 +46,10 @@
 |--------|--------|--------|
 | <img src="https://github.com/user-attachments/assets/23da475b-8e5e-48d7-bbae-18270bfc50f2" alt="박연수" width="150" height="150"> <br> 박연수 | <img src="https://github.com/user-attachments/assets/c69eff42-6ef2-49d9-8b05-b4ada00e548f" alt="박인수" width="150" height="150"> <br> 박인수 | <img src="https://github.com/user-attachments/assets/4cd77a5c-2710-4916-83dc-b1c0536e840c" alt="유한세" width="150" height="150"> <br> 유한세 |
 
+
 </div>
 
 
----
 
 ## ⚒️ 2. 서비스 소개
    <img width="3390" height="1873" alt="ERD" src="https://github.com/user-attachments/assets/4c38f6dc-ea0e-4b20-b3fc-32493d11fbe0" />
